@@ -1,0 +1,8 @@
+<h>投稿一覧</h>
+
+<% @books.each do |book| %>
+    <p>Title</p>
+    <%= book.title %>
+    <p>Opinion</p>
+    <%= book.body %>
+<% end %>
