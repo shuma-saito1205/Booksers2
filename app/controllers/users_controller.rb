@@ -14,6 +14,10 @@ class UsersController < ApplicationController
     redirect_to books_path(@book.id)
   end
 
+  def index
+    @users = User.all
+  end
+
   private
 
   def user_params
