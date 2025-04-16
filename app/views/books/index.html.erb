@@ -1,8 +1,10 @@
-<h>投稿一覧</h>
+<h>Books</h>
 
 <% @books.each do |book| %>
+  <div>
     <p>Title</p>
-    <%= book.title %>
+    <%= link_to book.title, books_path %>
     <p>Opinion</p>
     <%= book.body %>
+  </div>
 <% end %>
