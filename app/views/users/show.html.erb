@@ -1,8 +1,8 @@
 <h1>Books</h1>
 <% @books.each do |book| %>
   <div>
-    <%= image_tag book.user.get_profile_image(100,100) %>
-    <p>Title<%= book.title %></p>
-    <p>Opinion<%= book.body %></p>
+    <%= image_tag book.user.get_profile_image(100, 100) %>
+    <p>Title <%= link_to book.title, book_path(book) %></p>
+    <p>Opinion <%= book.body %></p>
   </div>
 <% end %>
