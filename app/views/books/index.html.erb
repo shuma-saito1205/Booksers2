@@ -1,7 +1,9 @@
 <h>Books</h>
+<%= render '/new' %>
 
 <% @books.each do |book| %>
   <div>
+    <%= image_tag book.user.get_profile_image(100, 100) %>
     <p>Title</p>
     <%= link_to book.title, book_path(book.id) %>
     <p>Opinion</p>
