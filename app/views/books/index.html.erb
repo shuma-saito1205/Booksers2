@@ -1,6 +1,9 @@
 <h>Books</h>
-<%= render '/new' %>
 
+<%= render '/show' %>
+z
+<%= render '/new' %>
+z
 <% @books.each do |book| %>
   <div>
     <%= image_tag book.user.get_profile_image(100, 100) %>
