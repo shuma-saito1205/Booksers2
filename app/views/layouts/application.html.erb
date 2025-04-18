@@ -52,7 +52,18 @@ z
         </li>
       <% end %>
     </header>
+    <div>
+      <%= flash[:notice] %>
+    </div>
 
+    <% if Book.new.errors.any? %>
+      <%= @book.errors.count %>error prohibited this obj from being saved:
+      <ul>
+        <% @book.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    <% end %>
    
     <%= yield %>
     <footer>
