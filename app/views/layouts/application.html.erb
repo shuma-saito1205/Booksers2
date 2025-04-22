@@ -18,7 +18,7 @@
     <header class="shadow-sm">
       <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container">
-          <a class="navbar-brand" href="/"> <p class="text-white bg-dark">Bookers</p></a>
+          <a class="navbar-brand" href="/"> <p class="text-white bg-dark ">Bookers</p></a>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" 
                         aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -74,13 +74,11 @@
       </nav>
     </header>
     
-    <main class="mb-auto">
-      <div>
-        <%= flash[:notice] %>
-      </div>
+    <main>
+      <%= flash[:notice] %>
       <%= yield %>
     </main>
-    <footer class="bg-white text-dark">
+    <footer class="bg-white text-dark mt-5">
       <div class="container">
         <div class="row">
           <div class="mx-auto"><p>CopyRight Infratop.inc</p></div>

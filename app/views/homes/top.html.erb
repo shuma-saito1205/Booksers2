@@ -1,14 +1,33 @@
-<h1>welcome to Bookers !!</h1>
-<p>In Bookers,</p>
+<div class="container">
+  <div class="row">
+  <div class="mx-auto">
+    <h1 class="fw-bold">welcome to<i class="fa-solid fa-book"></i>Bookers !!</h1>
+      <p class="lh-lg">In <i class="fa-solid fa-book"></i>Bookers,</p>
+      <p class ="lh-lg">you can share and exchange your opinions, inpressions, and emotions</p>
+      <p class ="lh-lg">about various books!</p>
+    <div class="d-flex flex-column mx-auto w-auto">
+    <% if user_signed_in? %>
+      <div class="d-grid gap-2">
+        <%= link_to user_path(current_user.id), class: 'btn btn-primary btn-block mb-3', role: 'button' do %>Log in
+        <% end %>
+      </div>
+      <div class="d-grid gap-2">
+        <%= link_to user_path(current_user.id), class: 'btn btn-success btn-block', role: 'button' do %>Sign up
+        <% end %>
+      </div>
+    <% else %>
+      <div class="d-grid gap-2">
+        <%= link_to new_user_session_path, class: 'btn btn-primary btn-block mb-3', role: 'button' do %>Log in
+        <% end %>
+      </div>
+      <div class="d-grid gap-2">
+        <%= link_to new_user_registration_path, class: 'btn btn-success btn-block', role: 'button' do %>Sign up
+        <% end %>
+      </div>
+    <% end %>
+  </div>
+  </div>
+</div>
 
-<p>you can share and exchange your opinions, inpressions, and emotions</p>
 
-<p>about various books!</p>
 
-<% if user_signed_in? %>
-  <%= link_to "Log in", user_path(current_user.id) %>
-  <%= link_to "Sign up", user_path(current_user.id) %>
-<% else %>
-  <%= link_to "Log in", new_user_session_path %>
-  <%= link_to "Sign up", new_user_registration_path %>
-<% end %>
