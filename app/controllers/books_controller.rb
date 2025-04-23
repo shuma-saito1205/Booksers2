@@ -51,7 +51,7 @@ before_action :is_matching_login_user, only: [:edit, :update, :destroy]
   private
 
   def book_params
-    params.require(:book).permit(:title, :body)
+    params.require(:book).permit(:title, :body, :user_id)
   end
 
   def is_matching_login_user

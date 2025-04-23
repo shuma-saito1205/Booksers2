@@ -1,7 +1,5 @@
-<div class="contaiaer">
-  <div class="row">
-    <div class="col-md-5 mx-auto">
-      <h2 class="mt3">Books</h2>
+<div class="contaiaer mt-3">
+  <div class="row mx-auto">
     <% if @book.errors.any? %>
       <%= @book.errors.count %>errors prohibited this obj from being saved:
     <ul>
@@ -10,18 +8,27 @@
       <% end %>
     </ul>
     <% end %> 
-
-
-      <h1>Books</h1>
+    <div class="col-md-3">
+      <%= render '/show', user: @user %>
+    <div class="col-md-8 offset-md-1">
+    <h1>Books</h1>
+    <table class="table">
+      <thead>
+        <tr>
+          <th></th> 
+          <th>Title</th>
+          <th>Opinion</th>
+        </tr>
+      </thead>
       <% @books.each do |book| %>
-        <div>
-          <%= image_tag book.user.get_profile_image(100, 100) %>
-          <p>Title</p>
-          <%= link_to book.title, book_path(book.id) %>
-          <p>Opinion</p>
-          <%= book.body %>
-        </div>
+        <tbody>
+          <tr>
+            <th><%= image_tag book.user.get_profile_image(100, 100) %></th>
+            <td><%= link_to book.title, book_path(book.id) %></td>
+            <td><%= book.body %></td>
+          </tr>
+        </tbody>
       <% end %>
-    </div>
+    </table>
   </div>
 </div>
