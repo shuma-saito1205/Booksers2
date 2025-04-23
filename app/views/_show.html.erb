@@ -1,6 +1,4 @@
-<div class="container">
-  <div class="row">
-   <div class="col-md-3">
+<div>
 <h2>User Info</h2>
 <% if "#{controller_name}/#{action_name}" == "users/show" || "#{controller_name}/#{action_name}" == "books/show" %>
   <%= image_tag user.get_profile_image(100,100) %>
@@ -46,6 +44,16 @@
     </div>
   <% end %>
 </div>
-</div>
-</div>
 
+  <h2>New book</h2>
+  <%= form_with model: @book, url: books_path, local: true do |f| %>
+    <a>Title</a>
+    <%= f.text_field :title %>
+    <a>Opinion</a>
+    <%= f.text_area :body %>
+  <div class="actions">
+    <%= f.submit "Submit", class:"btn btn-success btn-sm" %>
+  </div>
+  <% end %>
+  
+</div>
