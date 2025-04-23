@@ -1,10 +1,24 @@
-<%= render '/show', user: @user %>
-<%= render 'books/new', book: @book %>
-<h1>Book detail</h1>
-  <%= @book.title %>
-  <%= @book.body %>
+<div class="containar mt-3">
+  <div class="row mx-auto">
+    <div class="col-md-3">
+      <%= render '/show', user: @user %>
+    <div class="col-md-8 offset-md-1">
+      <h2>Book detail</h2>
+      <table class="table">
+        <tbody>
+          <tr>
+            <th><%= image_tag @book.user.get_profile_image(100, 100) %><br />
+                <%= link_to @user.name, user_path(@user) %></th>
+            <td><%= @book.title %></td>
+            <td><%= @book.body %></td>
+            <% if @book.user == current_user %>
+              <td><%= link_to "Edit", edit_book_path, class: "btn btn-success btn-sm" %></td>
+              <td><%= link_to "Destroy", book_path(@book), class: "btn btn-danger btn-sm", method: :delete, data: { confirm: "本当に消しますか？" } %></td>
+            <% end %>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
 
-<% if @book.user == current_user %>
-  <%= link_to "Edit", edit_book_path %>
-  <%= link_to "Destroy", book_path(@book), method: :delete, "data-confirm" => "本当に消しますか？" %>
-<% end %>
