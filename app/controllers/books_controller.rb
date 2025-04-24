@@ -18,14 +18,14 @@ before_action :is_matching_login_user, only: [:edit, :update, :destroy]
   end 
 
   def show
-    @book = Book.new
     @book = Book.find(params[:id])
     @user = User.find(@book.user_id)
+    @new = Book.new
   end
 
   def index
     @books = Book.all
-    @book = Book.new
+    @new = Book.new
   end
 
   def edit
