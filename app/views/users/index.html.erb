@@ -1,18 +1,10 @@
 <div class="contaiaer mt-3">
-<% if book.errors.any? %>
-<%= book.errors.count %>errors prohibited this obj from being saved:
-  <ul>
-    <% book.errors.full_messages.each do |message| %>
-     <li><%= message %></li>
-    <% end %> 
-  </ul>
-<% end %>
   <div class="row mx-auto">
     <div class="col-md-3">
       <%= render '/show', user: @user %>
     </div>
     <div class="col-md-8 offset-md-1">
-      <h2>Users</h2>a
+      <h2>Users</h2>
       <table class="table">
         <thead>
           <tr>
