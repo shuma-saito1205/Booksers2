@@ -1,4 +1,13 @@
 <div class="container">
+<% flash.each do |key, value| %>
+  <div class="alert alert-<%= key %>">
+    <% if key == 'notice' %>
+      Welcome! You have signed up successfully.
+    <% else %>
+      <%= value %>
+    <% end %>
+  </div>
+<% end %>
   <div class="row ">
     <div class="col mx-auto">
       <h2>Sign up</h2>
