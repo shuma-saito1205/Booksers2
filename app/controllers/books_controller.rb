@@ -16,7 +16,7 @@ before_action :is_matching_login_user, only: [:edit, :update, :destroy]
       render "index"
     end
   end 
-
+ 
   def show
     @book = Book.find(params[:id])
     @user = User.find(@book.user_id)
